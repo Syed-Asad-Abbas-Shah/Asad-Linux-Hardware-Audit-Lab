@@ -1,0 +1,49 @@
+site_name: Asad Linux Hardware Audit Lab
+site_description: Professional Linux hardware inspection, live command captures, and systems-engineering analysis.
+site_author: Syed Asad Abbas Shah
+
+repo_name: Syed-Asad-Abbas-Shah/Asad-Linux-Hardware-Audit-Lab
+repo_url: https://github.com/Syed-Asad-Abbas-Shah/Asad-Linux-Hardware-Audit-Lab
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+docs_dir: .
+
+nav:
+  - Home: README.md
+  - Audit Modules:
+    - 01 · System Summary: docs/01-system-summary.md
+    - 02 · CPU: docs/02-cpu.md
+    - 03 · GPU & Display: docs/03-gpu-display.md
+    - 04 · Memory: docs/04-memory.md
+    - 05 · Storage: docs/05-storage.md
+    - 06 · Motherboard & Firmware: docs/06-motherboard-firmware.md
+    - 07 · Network & Bluetooth: docs/07-network-bluetooth.md
+    - 08 · Audio: docs/08-audio.md
+    - 09 · USB: docs/09-usb.md
+    - 10 · Sensors: docs/10-sensors.md
+    - 11 · Power & Battery: docs/11-power-battery.md
+    - 12 · PCI Bus: docs/12-pci.md
+    - 13 · Kernel & Firmware: docs/13-kernel-firmware.md
+    - 14 · GUI Tools: docs/14-gui-tools.md
