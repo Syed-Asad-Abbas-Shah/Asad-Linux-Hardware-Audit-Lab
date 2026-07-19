@@ -1,3 +1,21 @@
-$ bash -c dmesg 2>&1 | grep -i -E "(error|fail|warn|firmware)" | head -80 || journalctl -k -b --no-pager 2>&1 | grep -i -E "(error|fail|warn|firmware)" | head -80
----
-dmesg: read kernel buffer failed: Operation not permitted
+Jul 19 10:43:06 cachyos kernel: ACPI: [Firmware Bug]: BIOS _OSI(Linux) query ignored
+Jul 19 10:43:06 cachyos kernel: RAS: Correctable Errors collector initialized.
+Jul 19 10:43:06 cachyos kernel: wmi_bus wmi_bus-PNP0C14:00: [Firmware Info]: DF4E63B6-3BBC-4858-9737-C74F82F821F3 has zero instances
+Jul 19 10:43:06 cachyos kernel: wmi_bus wmi_bus-PNP0C14:00: [Firmware Info]: 8F1F6436-9F42-42C8-BADC-0E9424F20C9A has zero instances
+Jul 19 10:43:06 cachyos kernel: wmi_bus wmi_bus-PNP0C14:02: [Firmware Bug]: WQZZ data block query control method not found
+Jul 19 10:43:06 cachyos kernel: i915 0000:00:02.0: [drm] Finished loading DMC firmware i915/kbl_dmc_ver1_04.bin (v1.4)
+Jul 19 10:43:09 cachyos-x8664 systemd[1]: Clear Stale Hibernate Storage Info skipped, unmet condition check ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-8cf2644b-4b0b-428f-9387-6d876050dc67
+Jul 19 10:43:11 cachyos-x8664 kernel: hp_wmi: query 0x4 returned error 0x5
+Jul 19 10:43:11 cachyos-x8664 kernel: hp-wmi hp-wmi: Failed to apply initial fan settings: -22
+Jul 19 10:43:11 cachyos-x8664 kernel: iwlwifi 0000:00:14.3: loaded firmware version 77.f39cc7f9.0 QuZ-a0-hr-b0-77.ucode op_mode iwlmvm
+Jul 19 10:43:11 cachyos-x8664 kernel: Bluetooth: hci0: Found device firmware: intel/ibt-19-0-4.sfi
+Jul 19 10:43:11 cachyos-x8664 kernel: Bluetooth: hci0: Firmware Version: 83-7.26
+Jul 19 10:43:11 cachyos-x8664 kernel: Bluetooth: hci0: Firmware already loaded
+Jul 19 10:43:12 cachyos-x8664 kernel: sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware paths/files for ipc type 0:
+Jul 19 10:43:12 cachyos-x8664 kernel: sof-audio-pci-intel-cnl 0000:00:1f.3:  Firmware file:     intel/sof/sof-cml.ri
+Jul 19 10:43:12 cachyos-x8664 kernel: sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware info: version 2:2:0-57864
+Jul 19 10:43:12 cachyos-x8664 kernel: sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware: ABI 3:22:1 Kernel ABI 3:23:1
+Jul 19 10:43:12 cachyos-x8664 kernel: sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware info: version 2:2:0-57864
+Jul 19 10:43:12 cachyos-x8664 kernel: sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware: ABI 3:22:1 Kernel ABI 3:23:1
+Jul 19 10:43:26 cachyos-x8664 kernel: i915 0000:00:02.0: [drm] *ERROR* Atomic update failure on pipe A (start=1619 end=1620) time 346 us, min 1072, max 1079, scanline start 1066, end 1087
+Jul 19 10:43:26 cachyos-x8664 kernel: warning: `kdeconnectd' uses wireless extensions which will stop working for Wi-Fi 7 hardware; use nl80211
