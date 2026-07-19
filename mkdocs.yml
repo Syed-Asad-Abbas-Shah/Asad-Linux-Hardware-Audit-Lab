@@ -28,22 +28,23 @@ theme:
     - search.highlight
     - content.code.copy
 
-docs_dir: .
+docs_dir: docs
+site_dir: site
 
 nav:
-  - Home: README.md
+  - Home: index.md
   - Audit Modules:
-    - 01 · System Summary: docs/01-system-summary.md
-    - 02 · CPU: docs/02-cpu.md
-    - 03 · GPU & Display: docs/03-gpu-display.md
-    - 04 · Memory: docs/04-memory.md
-    - 05 · Storage: docs/05-storage.md
-    - 06 · Motherboard & Firmware: docs/06-motherboard-firmware.md
-    - 07 · Network & Bluetooth: docs/07-network-bluetooth.md
-    - 08 · Audio: docs/08-audio.md
-    - 09 · USB: docs/09-usb.md
-    - 10 · Sensors: docs/10-sensors.md
-    - 11 · Power & Battery: docs/11-power-battery.md
-    - 12 · PCI Bus: docs/12-pci.md
-    - 13 · Kernel & Firmware: docs/13-kernel-firmware.md
-    - 14 · GUI Tools: docs/14-gui-tools.md
+    - 01 · System Summary: 01-system-summary.md
+    - 02 · CPU: 02-cpu.md
+    - 03 · GPU & Display: 03-gpu-display.md
+    - 04 · Memory: 04-memory.md
+    - 05 · Storage: 05-storage.md
+    - 06 · Motherboard & Firmware: 06-motherboard-firmware.md
+    - 07 · Network & Bluetooth: 07-network-bluetooth.md
+    - 08 · Audio: 08-audio.md
+    - 09 · USB: 09-usb.md
+    - 10 · Sensors: 10-sensors.md
+    - 11 · Power & Battery: 11-power-battery.md
+    - 12 · PCI Bus: 12-pci.md
+    - 13 · Kernel & Firmware: 13-kernel-firmware.md
+    - 14 · GUI Tools: 14-gui-tools.md
