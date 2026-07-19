@@ -1,9 +1,9 @@
-site_name: Asad Linux Hardware Audit Lab
+site_name: Linux Hardware Audit Lab
 site_description: Professional Linux hardware inspection, live command captures, and systems-engineering analysis.
 site_author: Syed Asad Abbas Shah
 
-repo_name: Syed-Asad-Abbas-Shah/Asad-Linux-Hardware-Audit-Lab
-repo_url: https://github.com/Syed-Asad-Abbas-Shah/Asad-Linux-Hardware-Audit-Lab
+repo_name: Syed-Asad-Abbas-Shah/linux-hardware-audit-lab
+repo_url: https://github.com/Syed-Asad-Abbas-Shah/linux-hardware-audit-lab
 
 theme:
   name: material

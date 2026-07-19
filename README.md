@@ -1,4 +1,4 @@
-# Asad Linux Hardware Audit Lab
+# Linux Hardware Audit Lab
 
 **Professional Linux hardware inspection, live command captures, and systems-engineering analysis**
 
@@ -75,8 +75,8 @@ Sensitive identifiers (serials, MACs, IPs, machine IDs) are redacted in public o
 ### Re-run the audit on your machine
 
 ```bash
-git clone https://github.com/Syed-Asad-Abbas-Shah/Asad-Linux-Hardware-Audit-Lab.git
-cd Asad-Linux-Hardware-Audit-Lab
+git clone https://github.com/Syed-Asad-Abbas-Shah/linux-hardware-audit-lab.git
+cd linux-hardware-audit-lab
 chmod +x scripts/collect-hardware-info.sh
 ./scripts/collect-hardware-info.sh
 # Optional elevated capture (DMI, SMART, full lshw, dmesg):
@@ -90,7 +90,7 @@ Outputs land in `outputs/` (local run). The committed samples under `outputs/` a
 ## Repository layout
 
 ```text
-Asad-Linux-Hardware-Audit-Lab/
+linux-hardware-audit-lab/
 ├── README.md                 # You are here
 ├── LICENSE                   # MIT
 ├── docs/                     # Concepts + analysis per subsystem
