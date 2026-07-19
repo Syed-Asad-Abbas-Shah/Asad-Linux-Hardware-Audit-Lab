@@ -1,0 +1,2017 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Professional Linux hardware inspection, live command captures, and systems-engineering analysis.">
+      
+      
+        <meta name="author" content="Syed Asad Abbas Shah">
+      
+      
+      
+      
+        <link rel="next" href="01-system-summary/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Linux Hardware Audit Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#asad-linux-hardware-audit-lab" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Linux Hardware Audit Lab" class="md-header__button md-logo" aria-label="Linux Hardware Audit Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linux Hardware Audit Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Syed-Asad-Abbas-Shah/linux-hardware-audit-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Syed-Asad-Abbas-Shah/linux-hardware-audit-lab
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="01-system-summary/" class="md-tabs__link">
+          
+  
+  
+  Audit Modules
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Linux Hardware Audit Lab" class="md-nav__button md-logo" aria-label="Linux Hardware Audit Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linux Hardware Audit Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Syed-Asad-Abbas-Shah/linux-hardware-audit-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Syed-Asad-Abbas-Shah/linux-hardware-audit-lab
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-repository-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this repository exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference machine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#browse-the-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browse the lab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-run-the-audit-on-your-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Re-run the audit on your machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-coverage-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command coverage map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command coverage map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPU
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPU &amp; display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firmware-buses-sensors-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firmware, buses, sensors, power
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-findings-reference-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineering findings (reference capture)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engineering findings (reference capture)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#health-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health snapshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privilege-gaps-in-the-public-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege gaps in the public capture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy-safety-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privacy &amp; safety policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Audit Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01-system-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · System Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02-cpu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · CPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03-gpu-display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · GPU & Display
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06-motherboard-firmware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Motherboard & Firmware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07-network-bluetooth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Network & Bluetooth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="08-audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="09-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · USB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10-sensors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Sensors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11-power-battery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 · Power & Battery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="12-pci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 · PCI Bus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="13-kernel-firmware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 · Kernel & Firmware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="14-gui-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 · GUI Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-repository-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this repository exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference machine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#browse-the-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browse the lab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-run-the-audit-on-your-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Re-run the audit on your machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-coverage-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command coverage map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command coverage map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPU
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPU &amp; display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firmware-buses-sensors-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firmware, buses, sensors, power
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-findings-reference-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineering findings (reference capture)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engineering findings (reference capture)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#health-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health snapshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privilege-gaps-in-the-public-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege gaps in the public capture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy-safety-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privacy &amp; safety policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="asad-linux-hardware-audit-lab">Asad Linux Hardware Audit Lab</h1>
+<p><strong>Professional Linux hardware inspection, live command captures, and systems-engineering analysis</strong></p>
+<p><a href="#"><img alt="Platform" src="https://img.shields.io/badge/platform-Linux%20%7C%20CachyOS%20%7C%20Arch-blue" /></a>
+<a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-green" /></a>
+<a href="#reference-machine"><img alt="Hardware" src="https://img.shields.io/badge/reference%20machine-HP%20EliteBook%20840%20G7-informational" /></a>
+<a href="#"><img alt="Kernel" src="https://img.shields.io/badge/kernel-7.1.3--2--cachyos-orange" /></a></p>
+<blockquote>
+<p>Authored by <strong>Syed Asad Abbas Shah</strong><br />
+A public, developer-oriented laboratory for auditing Linux hardware using real terminal commands, real outputs, and clear engineering explanations.</p>
+</blockquote>
+<hr />
+<h2 id="why-this-repository-exists">Why this repository exists</h2>
+<p>Most “hardware command lists” stop at a one-line description. This lab goes further:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Layer</th>
+<th style="text-align: left;">What you get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Commands</strong></td>
+<td style="text-align: left;">Exact, copy-paste ready inspection commands</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Live output</strong></td>
+<td style="text-align: left;">Captured on a real machine (privacy-redacted)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Analysis</strong></td>
+<td style="text-align: left;">What the numbers mean for health, drivers, and performance</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Concepts</strong></td>
+<td style="text-align: left;">Kernel interfaces, buses, firmware, and user-space tooling</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Reproducibility</strong></td>
+<td style="text-align: left;">A collector script so anyone can re-run the full audit</td>
+</tr>
+</tbody>
+</table>
+<p>This is intended for developers, sysadmins, support engineers, and Linux learners who want a <strong>professional reference</strong>, not a bare cheatsheet.</p>
+<hr />
+<h2 id="reference-machine">Reference machine</h2>
+<p>Captured on <strong>2026-07-19</strong> (CachyOS / Arch family).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>System</strong></td>
+<td style="text-align: left;">HP EliteBook 840 G7 Notebook PC</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CPU</strong></td>
+<td style="text-align: left;">Intel Core i7-10610U · 4 cores / 8 threads · 400 MHz–4.90 GHz</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>GPU</strong></td>
+<td style="text-align: left;">Intel Comet Lake-U GT2 (UHD Graphics) · driver <code>i915</code> · Mesa 26.1.4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Display</strong></td>
+<td style="text-align: left;">1920×1080 @ 60 Hz · Wayland (KWin) · OpenGL 4.6 · Vulkan 1.4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Memory</strong></td>
+<td style="text-align: left;">~8 GiB (7.54 GiB available) · zram swap 7.53 GiB</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Storage</strong></td>
+<td style="text-align: left;">WD PC SN530 256 GB NVMe · Btrfs root · VFAT ESP</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Network</strong></td>
+<td style="text-align: left;">Intel CNVi Wi-Fi (<code>iwlwifi</code>) · Intel AX201 Bluetooth 5.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Audio</strong></td>
+<td style="text-align: left;">Intel 400 Series HD Audio · SOF driver · PipeWire 1.6.8</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>I/O</strong></td>
+<td style="text-align: left;">USB 3.2 xHCI · Thunderbolt 3 (Titan Ridge JHL7540) · Synaptics fingerprint</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Firmware</strong></td>
+<td style="text-align: left;">UEFI · HP S70 Ver. 01.19.00 (2024-11-24)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OS</strong></td>
+<td style="text-align: left;">CachyOS · Kernel <code>7.1.3-2-cachyos</code> · KDE Plasma 6.7.3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Battery</strong></td>
+<td style="text-align: left;">Li-ion · ~76.8% design capacity remaining · 223 charge cycles</td>
+</tr>
+</tbody>
+</table>
+<p>Sensitive identifiers (serials, MACs, IPs, machine IDs) are redacted in public outputs.</p>
+<hr />
+<h2 id="quick-start">Quick start</h2>
+<h3 id="browse-the-lab">Browse the lab</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="docs/01-system-summary.md">01 · System summary</a></td>
+<td style="text-align: left;">Full-stack overview (<code>inxi</code>, <code>fastfetch</code>, <code>hostnamectl</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="docs/02-cpu.md">02 · CPU</a></td>
+<td style="text-align: left;">Topology, caches, governors, virtualization</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="docs/03-gpu-display.md">03 · GPU &amp; display</a></td>
+<td style="text-align: left;">OpenGL, Vulkan, OpenCL, monitors</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="docs/04-memory.md">04 · Memory</a></td>
+<td style="text-align: left;">RAM, swap, <code>/proc/meminfo</code>, physical modules</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="docs/05-storage.md">05 · Storage</a></td>
+<td style="text-align: left;">NVMe, partitions, SMART, filesystems</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="docs/06-motherboard-firmware.md">06 · Motherboard &amp; firmware</a></td>
+<td style="text-align: left;">SMBIOS/DMI, UEFI, bootloader</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="docs/07-network-bluetooth.md">07 · Network &amp; Bluetooth</a></td>
+<td style="text-align: left;">Wi-Fi, RF kill, Bluetooth controller</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="docs/08-audio.md">08 · Audio</a></td>
+<td style="text-align: left;">ALSA, PipeWire, SOF HDA</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="docs/09-usb.md">09 · USB</a></td>
+<td style="text-align: left;">Device tree, speeds, descriptors</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="docs/10-sensors.md">10 · Sensors</a></td>
+<td style="text-align: left;">Temperatures, thermal zones, fans</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="docs/11-power-battery.md">11 · Power &amp; battery</a></td>
+<td style="text-align: left;">Capacity, cycles, AC adapter</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="docs/12-pci.md">12 · PCI bus</a></td>
+<td style="text-align: left;">Chipset map, Thunderbolt, PCIe</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="docs/13-kernel-firmware.md">13 · Kernel &amp; firmware</a></td>
+<td style="text-align: left;">Modules, dmesg, <code>fwupd</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="docs/14-gui-tools.md">14 · GUI tools</a></td>
+<td style="text-align: left;">KInfoCenter, HardInfo, btop, GParted</td>
+</tr>
+</tbody>
+</table>
+<h3 id="re-run-the-audit-on-your-machine">Re-run the audit on your machine</h3>
+<pre><code class="language-bash">git clone https://github.com/Syed-Asad-Abbas-Shah/Asad-Linux-Hardware-Audit-Lab.git
+cd Asad-Linux-Hardware-Audit-Lab
+chmod +x scripts/collect-hardware-info.sh
+./scripts/collect-hardware-info.sh
+# Optional elevated capture (DMI, SMART, full lshw, dmesg):
+sudo ./scripts/collect-hardware-info.sh --with-sudo
+</code></pre>
+<p>Outputs land in <code>outputs/</code> (local run). The committed samples under <code>outputs/</code> are the <strong>reference capture</strong> from the HP EliteBook 840 G7.</p>
+<hr />
+<h2 id="repository-layout">Repository layout</h2>
+<pre><code class="language-text">Asad-Linux-Hardware-Audit-Lab/
+├── README.md                 # You are here
+├── LICENSE                   # MIT
+├── docs/                     # Concepts + analysis per subsystem
+├── outputs/                  # Privacy-redacted live command captures
+│   ├── system/
+│   ├── cpu/
+│   ├── gpu/
+│   └── ...
+└── scripts/
+    └── collect-hardware-info.sh
+</code></pre>
+<hr />
+<h2 id="command-coverage-map">Command coverage map</h2>
+<p>Commands are organized by subsystem. <strong>Elevated</strong> means root is required for full data.</p>
+<h3 id="system-overview">System overview</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Privilege</th>
+<th style="text-align: left;">Concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>inxi -Fz</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Portable multi-subsystem hardware summary (filters MACs)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>inxi -Fxz</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Extended summary including repos / extra detail</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fastfetch</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Fast neofetch-style snapshot for desktop context</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hostnamectl</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Machine identity, chassis, firmware metadata</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>uname -a</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Kernel release string and architecture</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sudo lshw -short</code></td>
+<td style="text-align: left;">elevated</td>
+<td style="text-align: left;">Hierarchical hardware inventory</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sudo lshw -html &gt; report.html</code></td>
+<td style="text-align: left;">elevated</td>
+<td style="text-align: left;">Browser-readable full inventory</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cpu">CPU</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Privilege</th>
+<th style="text-align: left;">Concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>lscpu</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Topology, caches, flags, side-channel mitigations</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>cat /proc/cpuinfo</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Per-logical-CPU raw kernel view</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>lscpu --extended</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Core/socket/cache sharing table</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>cpupower frequency-info</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">P-state driver, governor, boost</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>lstopo</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">NUMA / cache / PCIe locality map (<code>hwloc</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gpu-display">GPU &amp; display</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Privilege</th>
+<th style="text-align: left;">Concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>lspci -k \| grep -A 3 -E "(VGA\|3D)"</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">GPU PCI ID + bound kernel driver</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>glxinfo \| grep ...</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Active OpenGL stack / renderer</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>vulkaninfo --summary</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Vulkan devices and instance layers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clinfo</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">OpenCL compute devices</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>xrandr</code> / <code>kscreen-doctor -l</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Modes, connectors, DE display config</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>nvidia-smi</code> / <code>nvtop</code> / <code>radeontop</code> / <code>intel_gpu_top</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Vendor-specific monitoring (if present)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="memory">Memory</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Privilege</th>
+<th style="text-align: left;">Concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>free -h</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Total / used / available / swap</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>cat /proc/meminfo</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Kernel memory counters</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>lsmem</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Online memory ranges and block size</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>vmstat -s</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">VM event counters</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sudo dmidecode --type memory</code></td>
+<td style="text-align: left;">elevated</td>
+<td style="text-align: left;">DIMM slots, speed, part numbers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="storage">Storage</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Privilege</th>
+<th style="text-align: left;">Concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>lsblk -e7 -o ...</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Block devices, models, mounts</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sudo nvme list</code></td>
+<td style="text-align: left;">elevated</td>
+<td style="text-align: left;">NVMe namespaces (<code>nvme-cli</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sudo smartctl -i/-A DEVICE</code></td>
+<td style="text-align: left;">elevated</td>
+<td style="text-align: left;">Identity + SMART attributes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>findmnt</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Mount tree and options</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>df -hT</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Capacity by filesystem type</td>
+</tr>
+</tbody>
+</table>
+<h3 id="firmware-buses-sensors-power">Firmware, buses, sensors, power</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Privilege</th>
+<th style="text-align: left;">Concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>sudo dmidecode -t baseboard/bios/system/chassis</code></td>
+<td style="text-align: left;">elevated</td>
+<td style="text-align: left;">SMBIOS tables</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ls /sys/firmware/efi</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">UEFI vs legacy boot signal</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>bootctl status</code></td>
+<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">systemd-boot / Secure Boot state</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>lspci</code> / <code>lspci -tv</code> / <code>sudo lspci -vvv</code></td>
+<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">PCI topology and link training</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>lsusb</code> / <code>lsusb -t</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">USB devices and speeds</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sensors</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">lm-sensors temperatures / fans</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>upower -i ...</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Battery chemistry, cycles, rate</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>lsmod</code> / <code>fwupdmgr get-devices</code></td>
+<td style="text-align: left;">user</td>
+<td style="text-align: left;">Loaded modules / updatable firmware</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="engineering-findings-reference-capture">Engineering findings (reference capture)</h2>
+<h3 id="health-snapshot">Health snapshot</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Check</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CPU thermal</td>
+<td style="text-align: left;">~48–51 °C package idle</td>
+<td style="text-align: left;">Well below 100 °C critical</td>
+</tr>
+<tr>
+<td style="text-align: left;">NVMe thermal</td>
+<td style="text-align: left;">~38 °C</td>
+<td style="text-align: left;">Comfortable margin under 80 °C high</td>
+</tr>
+<tr>
+<td style="text-align: left;">Battery health</td>
+<td style="text-align: left;"><strong>76.8%</strong> of design</td>
+<td style="text-align: left;">223 cycles — normal aging for a few years of use</td>
+</tr>
+<tr>
+<td style="text-align: left;">Storage free space</td>
+<td style="text-align: left;">~57% free on root</td>
+<td style="text-align: left;">Healthy headroom for Btrfs</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wi-Fi / Bluetooth</td>
+<td style="text-align: left;">Up, unblocked</td>
+<td style="text-align: left;"><code>iwlwifi</code> + AX201 active</td>
+</tr>
+<tr>
+<td style="text-align: left;">Graphics stack</td>
+<td style="text-align: left;">Mesa iris + Vulkan Intel</td>
+<td style="text-align: left;">Full open-source Intel stack</td>
+</tr>
+<tr>
+<td style="text-align: left;">Firmware</td>
+<td style="text-align: left;">UEFI, BIOS 01.19.00</td>
+<td style="text-align: left;">Recent HP firmware date (2024-11)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="architecture-notes">Architecture notes</h3>
+<ol>
+<li><strong>Comet Lake-U platform</strong> — single package with integrated UHD Graphics; no discrete GPU, so <code>nvidia-smi</code> is N/A.</li>
+<li><strong>Thunderbolt 3 Titan Ridge</strong> appears as a multi-hop PCI bridge chain — normal for Alpine Ridge / Titan Ridge designs.</li>
+<li><strong>SOF audio path</strong> (<code>sof-audio-pci-intel-cnl</code>) is the modern Intel DSP pipeline; ALSA card is <code>sof-hda-dsp</code>.</li>
+<li><strong>zram swap</strong> provides compressed in-RAM swap — good for 8 GiB laptops under memory pressure.</li>
+<li><strong>Btrfs subvolume layout</strong> shares one NVMe partition for <code>/</code>, <code>/home</code>, logs, and tmp with separate VFAT ESP.</li>
+</ol>
+<h3 id="privilege-gaps-in-the-public-capture">Privilege gaps in the public capture</h3>
+<p>These need <code>sudo</code> (or missing packages) for complete data on this host:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Area</th>
+<th style="text-align: left;">Status in public sample</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>dmidecode</code> (DIMMs / board serials)</td>
+<td style="text-align: left;">Permission denied without root</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>smartctl</code> / <code>nvme</code> SMART</td>
+<td style="text-align: left;">Permission denied / <code>nvme-cli</code> not installed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dmesg</code> ring buffer</td>
+<td style="text-align: left;">Operation not permitted (kernel lockdown / privileges)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>acpi</code> / <code>tlp-stat</code></td>
+<td style="text-align: left;">Not installed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>lshw</code></td>
+<td style="text-align: left;">Not installed</td>
+</tr>
+<tr>
+<td style="text-align: left;">Interactive tools (<code>nvtop</code>, <code>btop</code>, <code>sensors-detect</code>)</td>
+<td style="text-align: left;">Intentionally not captured as live TUI sessions</td>
+</tr>
+</tbody>
+</table>
+<p>The documentation still explains <strong>what those commands return</strong> and how to interpret them when run with privileges.</p>
+<hr />
+<h2 id="privacy-safety-policy">Privacy &amp; safety policy</h2>
+<p>Public artifacts are scrubbed for:</p>
+<ul>
+<li>MAC addresses and Bluetooth controller addresses  </li>
+<li>Local IPv4 addresses  </li>
+<li>Serial numbers and part UUIDs  </li>
+<li>Machine ID / boot ID / hostnames  </li>
+</ul>
+<p><strong>Not run</strong> in the automated collector by default:</p>
+<ul>
+<li>Destructive or long-running SMART self-tests (<code>smartctl -t short</code>)  </li>
+<li>Interactive <code>sensors-detect</code> (can rewrite configs)  </li>
+<li>GUI apps (<code>kinfocenter</code>, <code>gparted</code>, …)</li>
+</ul>
+<hr />
+<h2 id="contributing">Contributing</h2>
+<p>Improvements welcome:</p>
+<ol>
+<li>Additional distro notes (Fedora, Ubuntu, NixOS paths).</li>
+<li>Better redaction rules for enterprise identifiers.</li>
+<li>Optional JSON export for inventory automation.</li>
+<li>Screenshots of GUI tools under <code>docs/assets/</code> (no private data).</li>
+</ol>
+<p>Open a PR against this repository with a clear description of the subsystem you improved.</p>
+<hr />
+<h2 id="license">License</h2>
+<p>MIT © Syed Asad Abbas Shah — see <a href="LICENSE">LICENSE</a>.</p>
+<hr />
+<h2 id="author">Author</h2>
+<p><strong>Syed Asad Abbas Shah</strong><br />
+GitHub: <a href="https://github.com/Syed-Asad-Abbas-Shah">Syed-Asad-Abbas-Shah</a></p>
+<p><em>Built as a professional public hardware audit lab — commands, outputs, analysis, and concepts in one place.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
